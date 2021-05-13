@@ -50,7 +50,7 @@ function ArcgisMap() {
 
                 // LAYER SELECTOR
                 const baseMapNode = document.createElement('div')
-                baseMapNode.className = "map-left-menu-container"
+                baseMapNode.className = "basemap-gallery-container";
                 // Parse React Component to DOM
                 ReactDOM.render(
                     <LayerSelector/>,
