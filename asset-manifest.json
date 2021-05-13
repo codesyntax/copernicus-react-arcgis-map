@@ -75,8 +75,8 @@
     "static/js/36.b5468d9b.chunk.js": "/copernicus-react-arcgis-map/static/js/36.b5468d9b.chunk.js",
     "static/js/36.b5468d9b.chunk.js.map": "/copernicus-react-arcgis-map/static/js/36.b5468d9b.chunk.js.map",
     "main.css": "/copernicus-react-arcgis-map/static/css/main.3983920a.chunk.css",
-    "main.js": "/copernicus-react-arcgis-map/static/js/main.d9849590.chunk.js",
-    "main.js.map": "/copernicus-react-arcgis-map/static/js/main.d9849590.chunk.js.map",
+    "main.js": "/copernicus-react-arcgis-map/static/js/main.e6b13c77.chunk.js",
+    "main.js.map": "/copernicus-react-arcgis-map/static/js/main.e6b13c77.chunk.js.map",
     "runtime-main.js": "/copernicus-react-arcgis-map/static/js/runtime-main.67b5f1a0.js",
     "runtime-main.js.map": "/copernicus-react-arcgis-map/static/js/runtime-main.67b5f1a0.js.map",
     "static/css/39.0256d0f6.chunk.css": "/copernicus-react-arcgis-map/static/css/39.0256d0f6.chunk.css",
@@ -554,6 +554,6 @@
     "static/css/39.0256d0f6.chunk.css",
     "static/js/39.2b14d7df.chunk.js",
     "static/css/main.3983920a.chunk.css",
-    "static/js/main.d9849590.chunk.js"
+    "static/js/main.e6b13c77.chunk.js"
   ]
 }
