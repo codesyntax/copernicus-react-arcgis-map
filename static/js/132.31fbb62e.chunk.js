@@ -1,0 +1,2 @@
+(this["webpackJsonpcopernicus-react-arcgis-map"]=this["webpackJsonpcopernicus-react-arcgis-map"]||[]).push([[132],{781:function(e,t,c){"use strict";c.r(t),c.d(t,"s",(function(){return i}));var o=c(278),r=Object(o.b)((function(e,t){var c;void 0!==(c=function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default={"Zoom Out":"Oddiali\u0165","From %1 to %2":"Z %1 do %2","From %1":"Z %1","To %1":"Do %1"}}(o.a,t))&&(e.exports=c)})),a=Object(o.c)(r),i=Object.freeze(Object.assign(Object.create(null),r,{default:a}))}}]);
+//# sourceMappingURL=132.31fbb62e.chunk.js.map
