@@ -6,26 +6,17 @@ import Zoom from "@arcgis/core/widgets/Zoom";
 import ScaleBar from "@arcgis/core/widgets/ScaleBar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-import esriConfig from '@arcgis/core/config';
-import "./ArcgisMap.css";
 import "@arcgis/core/assets/esri/css/main.css";
+import "./ArcgisMap.css";
 import MenuContainer from "./MenuContainer";
+import LayerSelector from './LayerSelector';
 import ReactDOM from 'react-dom';
 
 // import classNames from 'classnames';
 
 let view;
 function ArcgisMap() {
-    // const [showMapMenu, setShowMapMenu] = useState(false)
-    // const [view, setView] = useState()
-
-    // esriConfig.assetsPath = '/assets';
     const mapDiv = useRef(null);
-    const menuContainerDiv = useRef(null);
-    // var menuClass = classNames('esri-widget--button esri-widget esri-interactive', {
-    //     'esri-icon-left-arrow': showMapMenu,
-    //     'esri-icon-drag-horizontal': !showMapMenu
-    // });
     useEffect(() => {
 
         if (mapDiv.current) {
@@ -55,28 +46,17 @@ function ArcgisMap() {
                     position: "top-right"
                 });
 
-                var basemap_container = document.createElement('div');
-                basemap_container.className = "basemap-gallery-container";
-                var basemap_button = document.createElement('div');
-                basemap_button.className = "esri-icon-basemap esri-widget--button esri-widget esri-interactive";
-                basemap_button.id = "map_basemap_button";
-                basemap_button.setAttribute("role", "button");
-                basemap_button.setAttribute("title", "Basemap gallery");
-                basemap_button.addEventListener('click', function(evt){
-                  if (this.classList.contains("esri-icon-basemap")) {
-                    document.getElementsByClassName("esri-basemap-gallery")[0].classList.add("basemap-gallery-container")
-                    document.getElementsByClassName("esri-basemap-gallery")[0].style.display = 'block';
-                    this.classList.remove("esri-icon-basemap");
-                    this.classList.add("esri-icon-right-arrow");
-                  }
-                  else if (this.classList.contains("esri-icon-right-arrow")) {
-                    document.getElementsByClassName("esri-basemap-gallery")[0].style.display = 'none';
-                    this.classList.remove("esri-icon-right-arrow");
-                    this.classList.add("esri-icon-basemap");
-                  }
-                });
-                basemap_container.appendChild(basemap_button);
-                view.ui.add(basemap_container, "top-right");
+             
+
+                // LAYER SELECTOR
+                const baseMapNode = document.createElement('div')
+                baseMapNode.className = "map-left-menu-container"
+                // Parse React Component to DOM
+                ReactDOM.render(
+                    <LayerSelector/>,
+                    baseMapNode
+                );
+                view.ui.add(baseMapNode, "top-right");
 
                 const basemapGallery = new BasemapGallery({
                     view: view,
@@ -121,7 +101,6 @@ function ArcgisMap() {
                     <MenuContainer/>,
                     menuContainerNode
                 );
-                
                 view.ui.add(menuContainerNode, "top-left");
 
                 // loadTestProducts();
