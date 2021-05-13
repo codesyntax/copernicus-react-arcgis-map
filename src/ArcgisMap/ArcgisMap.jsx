@@ -9,7 +9,9 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import esriConfig from '@arcgis/core/config';
 import "./ArcgisMap.css";
 import "@arcgis/core/assets/esri/css/main.css";
-// import MenuContainer from "./MenuContainer";
+import MenuContainer from "./MenuContainer";
+import ReactDOM from 'react-dom';
+
 // import classNames from 'classnames';
 
 let view;
@@ -112,37 +114,15 @@ function ArcgisMap() {
                 view.ui.add(legend_button, "top-right");
 
                 // Menu
-                var menu_container = document.createElement('div');
-                menu_container.className = "map-left-menu-container"
-                var menu_button = document.createElement('div');
-                menu_button.className = "esri-icon-drag-horizontal esri-widget--button esri-widget esri-interactive";
-                menu_container.innerHTML = `
-                <div class="map-menu tab-container">
-                    <div class="tabs" role="tablist">
-                        <span class="tab tab-selected" id="products_label" role="tab" aria-controls="products_panel" aria-selected="true">Products and datasets</span>
-                        <span class="tab" id="active_label" role="tab" aria-controls="active_panel" aria-selected="false">Active on map</span>
-                    </div>
-                    <div class="panels">
-                        <div class="panel panel-selected" id="products_panel" role="tabpanel" aria-hidden="false"></div>
-                        <div class="panel" id="active_panel" role="tabpanel" aria-hidden="true"><div class="no-active-datasets">No datasets selected</div></div>
-                    </div>
-                </div>`;
-                menu_button.addEventListener('click', function (evt) {
-                    console.log(evt)
-                    if (this.classList.contains("esri-icon-drag-horizontal")) {
-                        document.getElementsByClassName("map-menu")[0].style.display = 'block';
-                        this.classList.remove("esri-icon-drag-horizontal");
-                        this.classList.add("esri-icon-left-arrow");
-                    }
-                    else if (this.classList.contains("esri-icon-left-arrow")) {
-                        document.getElementsByClassName("map-menu")[0].style.display = 'none';
-                        this.classList.remove("esri-icon-left-arrow");
-                        this.classList.add("esri-icon-drag-horizontal");
-                    }
-                });
-                menu_container.appendChild(menu_button);
-                view.ui.add(menu_container, "top-left");
-
+                const menuContainerNode = document.createElement('div')
+                menuContainerNode.className = "map-left-menu-container"
+                // Parse React Component to DOM
+                ReactDOM.render(
+                    <MenuContainer/>,
+                    menuContainerNode
+                );
+                
+                view.ui.add(menuContainerNode, "top-left");
 
                 // loadTestProducts();
 
