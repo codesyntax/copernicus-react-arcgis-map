@@ -1,5 +1,5 @@
 {
-  "name": "copernicus-react-map",
+  "name": "copernicus-react-arcgis-map",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
